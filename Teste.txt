@@ -1,0 +1,1 @@
+Arquivo para testar o gatilho do S3 na lambda
