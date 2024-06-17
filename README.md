@@ -1,8 +1,52 @@
 # trigger_lambda
-Repositorio para ajudar quem precisa aprender a fazer um gatilho com S3 na lambda AWS
+Repositório para Auxiliar na Configuração de Gatilho S3 para Lambda na AWS
 
-O repositorio é para auxiliar em sua criação de gatilho s3 para lambda, o nivel de conhecimento com AWS é iniciante e com algumas leituras vai ser fácil de fazer um teste.
+Este repositório foi criado para facilitar a configuração de um gatilho S3 para Lambda na AWS. Destina-se a iniciantes no uso da AWS, e com algumas leituras, será fácil realizar o teste.
+Passos:
 
-Primeiro de permissão IAM para seu EC2 a politica ja existe é somente atrelar a sua instancia, caso não tenha a role criada vai ser necessario criar uma role com a policy ssm, eu utilizei a AmazonSSMFullAccess. Garanta tambem que a role do EC2 tenha permissão no s3 que vai fazer a copia do arquivo, eu deixei no arquivo lieracao_s3.json um exemplo que eu usei, mas pode tambem utilizar o AmazonS3FullAccess ( não recomendado)
+    Permissão IAM para sua Instância EC2:
+        Verifique se sua instância EC2 possui a permissão IAM necessária. Caso contrário, é necessário criar uma role com a política adequada. Recomendamos a utilização da política AmazonSSMFullAccess. Certifique-se também de que a role da EC2 tenha permissões adequadas no S3 onde os arquivos serão copiados. No arquivo politica_s3.json, fornecemos um exemplo de política que pode ser utilizada, porém, é possível também utilizar AmazonS3FullAccess (não recomendado).
+
+    Configuração da Instância EC2:
+        Acesse a instância EC2 no console AWS.
+        Clique com o botão direito do mouse e selecione "Security".
+        Escolha a opção "Modify IAM role".
 
 ![roleIAM](img/roleIMA.png)
+
+
+Após a preparação do EC2, vamos criar a Lambda. Para isso, acesse o serviço de Lambda na AWS e clique em "Create Function".
+
+![function](img/function.png)
+
+Após a criação da lambda, é necessário ajustar a role da lambda para que ela tenha acesso ao S3 e ao SSM.
+
+Para configurar a role da lambda com as permissões necessárias, você pode seguir os seguintes passos:
+
+1. Acesse o console do AWS Lambda.
+
+2. Selecione a função da lambda que você criou.
+
+3. Na seção "Permissões da função", clique em "Gerenciar funções de permissões".
+
+4. Será redirecionado para o console do IAM. Clique em "Adicionar permissões" para editar a política da role.
+
+5. Na seção "Políticas de permissão", clique em "Anexar políticas existentes".
+
+6. Na caixa de pesquisa, digite "AmazonS3FullAccess" e selecione a política "AmazonS3FullAccess" que é responsável por conceder acesso completo ao S3.
+
+7. Clique em "Próximo: Revisar" e, em seguida, em "Anexar política" para salvar as alterações.
+
+8. Repita os passos 5 a 7 para adicionar a política "AmazonSSMFullAccess" que concede acesso completo ao SSM.
+
+Após configurar a role da lambda com as permissões necessárias, você pode construir o código da lambda com base na lógica necessária para o seu objetivo.
+
+No seu caso, em que você deseja copiar um arquivo do S3 e enviá-lo para uma pasta no EC2, você pode usar o arquivo lambda_function.py como base que deixei no github.
+
+Agora com a Lambda já criada vamos criar uma trigger S3, na pagina da lambda vamos clicar em trigger e escolher S3.
+
+![trigger](img/trigger.png)
+
+Após selecionar você deve escolher como o gatilho vai funcionar. Lembrando que a logica que buscar o arquivo no S3 deve ser feita no codigo que vai escrever, a trigger é para iniciar a lambda feita.
+
+![gatinho](img/gatilho3.png)
