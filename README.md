@@ -1,7 +1,7 @@
-# trigger_lambda
-Repositório para Auxiliar na Configuração de Gatilho S3 para Lambda na AWS
+# Trigger Lambda com S3
+Repositório para Auxiliar na Configuração de Trigger S3 para Lambda na AWS
 
-Este repositório foi criado para facilitar a configuração de um gatilho S3 para Lambda na AWS. Destina-se a iniciantes no uso da AWS, e com algumas leituras, será fácil realizar o teste.
+Este repositório foi criado para facilitar a configuração de um trigger S3 para Lambda na AWS. Destina-se a iniciantes no uso da AWS, e com algumas leituras, será fácil realizar o teste.
 Passos:
 
     Permissão IAM para sua Instância EC2:
@@ -47,6 +47,6 @@ Agora com a Lambda já criada vamos criar uma trigger S3, na pagina da lambda va
 
 ![trigger](img/trigger.png)
 
-Após selecionar você deve escolher como o gatilho vai funcionar. Lembrando que a logica que buscar o arquivo no S3 deve ser feita no codigo que vai escrever, a trigger é para iniciar a lambda feita.
+Após selecionar você deve escolher como o trigger vai funcionar. Lembrando que a logica que buscar o arquivo no S3 deve ser feita no codigo que vai escrever, a trigger é para iniciar a lambda feita.
 
-![gatinho](img/gatilho3.png)
+![tgatilho](img/garilho3.png)
