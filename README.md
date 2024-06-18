@@ -49,6 +49,6 @@ Agora com a Lambda já criada vamos criar uma trigger S3, na pagina da lambda va
 
 Após selecionar você deve escolher como o trigger vai funcionar. Lembrando que a logica que buscar o arquivo no S3 deve ser feita no codigo que vai escrever, a trigger é para iniciar a lambda feita.
 
-![tgatilho](img/gatilhos3.png)
+![gatilho](img/gatilhos3.png)
 
 
