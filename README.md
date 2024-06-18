@@ -55,14 +55,15 @@ Na página da função Lambda, adicione um gatilho S3 e personalize suas configu
 
 Escolha entre os diversos tipos de eventos S3 disponíveis, como
 
-    ObjectCreated (All)
-    ObjectCreated (Put)
-    ObjectCreated (Post)
-    ObjectCreated (Copy)
-    ObjectCreated (Complete Multipart Upload)
-    ObjectRemoved (All)
-    ObjectRemoved (Delete)
-    ObjectRemoved (DeleteMarkerCreated)
+ObjectCreated (All)
+ObjectCreated (Put)
+ObjectCreated (Post)
+ObjectCreated (Copy)
+ObjectCreated (Complete Multipart Upload)
+ObjectRemoved (All)
+ObjectRemoved (Delete)
+ObjectRemoved (DeleteMarkerCreated)
+
 Após todas a configurações devemos ter uma tela proxima a essa:
 
 ![lambda](img/lambda.png)
