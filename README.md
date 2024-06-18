@@ -2,15 +2,15 @@
 Repositório para Auxiliar na Configuração de Trigger S3 para Lambda na AWS
 
 Este repositório foi criado para facilitar a configuração de um trigger S3 para Lambda na AWS. Destina-se a iniciantes no uso da AWS, e com algumas leituras, será fácil realizar o teste.
-Passos:
+Passos
 
-    Permissão IAM para sua Instância EC2:
-        Verifique se sua instância EC2 possui a permissão IAM necessária. Caso contrário, é necessário criar uma role com a política adequada. Recomendamos a utilização da política AmazonSSMFullAccess. Certifique-se também de que a role da EC2 tenha permissões adequadas no S3 onde os arquivos serão copiados. No arquivo politica_s3.json, fornecemos um exemplo de política que pode ser utilizada, porém, é possível também utilizar AmazonS3FullAccess (não recomendado).
+Permissão IAM para sua Instância EC2:
+    Verifique se sua instância EC2 possui a permissão IAM necessária. Caso contrário, é necessário criar uma role com a política adequada. Recomendamos a utilização da política AmazonSSMFullAccess. Certifique-se também de que a role da EC2 tenha permissões adequadas no S3 onde os arquivos serão copiados. No arquivo politica_s3.json, fornecemos um exemplo de política que pode ser utilizada, porém, é possível também utilizar AmazonS3FullAccess (não recomendado).
 
-    Configuração da Instância EC2:
-        Acesse a instância EC2 no console AWS.
-        Clique com o botão direito do mouse e selecione "Security".
-        Escolha a opção "Modify IAM role".
+Configuração da Instância EC2:
+    Acesse a instância EC2 no console AWS.
+    Clique com o botão direito do mouse e selecione "Security".
+    Escolha a opção "Modify IAM role".
 
 ![roleIAM](img/roleIMA.png)
 
@@ -53,7 +53,7 @@ Após selecionar você deve escolher como o trigger vai funcionar. Lembrando que
 
 Na página da função Lambda, adicione um gatilho S3 e personalize suas configurações de acordo com suas necessidades:
 
-Escolha entre os diversos tipos de eventos S3 disponíveis, como:
+Escolha entre os diversos tipos de eventos S3 disponíveis, como
 
     ObjectCreated (All)
     ObjectCreated (Put)
