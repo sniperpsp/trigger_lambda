@@ -51,4 +51,50 @@ Após selecionar você deve escolher como o trigger vai funcionar. Lembrando que
 
 ![gatilho](img/gatilhos3.png)
 
+No meu exemplo eu coloquei todas as opções para teste, mas podemos escolher para diversos tipos de eventos no S3 como:
 
+1. ObjectCreated (All):
+
+    Este evento é acionado quando um novo objeto é criado no bucket S3, independentemente do método de criação (upload, cópia etc.).
+
+2. ObjectCreated (Put):
+
+    Acionado quando um novo objeto é enviado (put) para o bucket S3.
+
+3. ObjectCreated (Post):
+
+    Acionado quando um novo objeto é criado no bucket S3 usando uma operação POST.
+
+4. ObjectCreated (Copy):
+
+    Acionado quando um novo objeto é criado por meio de uma operação de cópia no bucket S3.
+
+5. ObjectCreated (Complete Multipart Upload):
+
+    Acionado quando um objeto é criado por meio de um upload multipart (carregamento multipart) no bucket S3.
+
+6. ObjectRemoved (All):
+
+    Acionado quando um objeto é removido (excluído) do bucket S3, independentemente do método de remoção.
+
+7. ObjectRemoved (Delete):
+
+    Acionado quando um objeto é excluído do bucket S3.
+
+8. ObjectRemoved (DeleteMarkerCreated):
+
+    Acionado quando um delete marker (marcador de exclusão) é criado no bucket S3.
+
+Após todas a configurações devemos ter uma tela proxima a essa:
+
+![lambda](img/lambda.png)
+
+Ao colcoar um arquivo dentro do s3 devemos ter uma resposta positiva, no meu caso eu cliquei em teste para validar o funcionamento da lambda.
+
+![lambdaok](img/lambdaOK.png)
+
+E em nosso EC2 devemos ter o arquivo copiado do S3:
+
+![copiaok](img/copiaok.png)
+
+Aqui é um exemplo de como podemos configurar e testara as triggers tem diversas aplicabildiades e essa é somente uma das muitas.
